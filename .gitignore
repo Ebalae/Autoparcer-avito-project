@@ -1,0 +1,12 @@
+node_modules/
+release/
+dist/
+**/.env
+**/.env.*
+!**/.env.example
+**/data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.exe

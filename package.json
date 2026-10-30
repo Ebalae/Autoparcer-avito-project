@@ -1,0 +1,32 @@
+{
+  "name": "avito-new-listings",
+  "version": "1.0.2",
+  "description": "Autoparcer desktop app for monitoring new Avito listings",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:obfuscated": "node scripts/prepare-obfuscated-build.js"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "javascript-obfuscator": "^5.9.0"
+  },
+  "build": {
+    "appId": "ru.avito.newlistings",
+    "productName": "Autoparcer.ru",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "autoparcer-site/public/favicon.svg"
+    }
+  }
+}
