@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7fb">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Управление аккаунтами — Autoparcer</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/site.css">
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Autoparcer — главная">
+        <span class="brand-mark" aria-hidden="true">a</span>
+        <span>auto<span class="brand-accent">parcer</span></span>
+      </a>
+      <div class="admin-header-actions">
+        <span class="admin-label">ПАНЕЛЬ АДМИНИСТРАТОРА</span>
+        <button id="admin-logout" class="button button-quiet" type="button">Выйти</button>
+      </div>
+    </header>
+
+    <main class="admin-main section-wrap">
+      <section class="admin-heading">
+        <div class="eyebrow">УПРАВЛЕНИЕ ДОСТУПОМ</div>
+        <h1>Аккаунты пользователей</h1>
+        <p>Выдавайте и отзывайте подписки, находите аккаунты и удаляйте их.</p>
+      </section>
+
+      <section class="admin-card" aria-label="Список аккаунтов">
+        <form id="admin-search" class="admin-toolbar">
+          <label class="admin-search">
+            <span class="visually-hidden">Поиск по логину</span>
+            <input id="admin-query" type="search" maxlength="80" placeholder="Найти по логину">
+          </label>
+          <button class="button button-outline" type="submit">Найти</button>
+          <button id="admin-refresh" class="button button-quiet" type="button">Обновить</button>
+          <span id="admin-result-count" class="admin-result-count"></span>
+        </form>
+
+        <p id="admin-notice" class="admin-notice" role="status" aria-live="polite" hidden></p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col">Аккаунт</th>
+                <th scope="col">Регистрация</th>
+                <th scope="col">Подписка</th>
+                <th scope="col">Управление</th>
+              </tr>
+            </thead>
+            <tbody id="admin-users"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-pagination">
+          <button id="admin-previous" class="button button-quiet" type="button">← Назад</button>
+          <span id="admin-page-label"></span>
+          <button id="admin-next" class="button button-quiet" type="button">Дальше →</button>
+        </div>
+      </section>
+
+      <p class="admin-footnote">Удаление аккаунта завершает все его сеансы и удаляет данные аккаунта. Платёжные записи сохраняются без привязки к пользователю.</p>
+    </main>
+  </body>
+</html>

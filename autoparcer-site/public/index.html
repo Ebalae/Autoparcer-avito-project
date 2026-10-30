@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7fb">
+    <meta name="description" content="Autoparcer — автоматический мониторинг новых объявлений Avito.">
+    <title>Autoparcer — не пропускайте новые объявления</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/site.css?v=20261008-laptop">
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Autoparcer — главная">
+        <span class="brand-mark" aria-hidden="true">a</span>
+        <span>auto<span class="brand-accent">parcer</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#how-it-works">Как работает</a>
+        <a href="#pricing">Подписка</a>
+      </nav>
+      <div class="header-actions">
+        <button id="login-trigger" class="button button-quiet" type="button">Войти</button>
+        <button id="signup-trigger" class="button button-small" type="button">Создать аккаунт</button>
+        <a id="account-trigger" class="account-trigger" href="/profile.html" hidden></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Автоматический мониторинг Avito</div>
+          <h1>Хорошие объявления<br>не ждут. <span>И вы тоже.</span></h1>
+          <p class="hero-lead">Autoparcer следит за поиском и показывает новые объявления в удобной ленте. Настройте один раз — проверяйте обновления в приложении.</p>
+          <div class="hero-actions">
+            <a id="hero-download" class="button button-primary" href="/download">
+              Скачать для Windows <span aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-outline" href="#how-it-works">Как это работает</a>
+          </div>
+          <div class="hero-note"><span class="check-icon" aria-hidden="true">✓</span> Приложение для Windows · Одна ссылка мониторинга</div>
+        </div>
+
+        <div class="preview-wrap" aria-label="Пример ленты новых объявлений">
+          <div class="preview-glow"></div>
+          <div class="laptop-mockup">
+            <div class="laptop-screen">
+              <svg class="preview-image" viewBox="0 0 1106 768" role="img" aria-label="Пример интерфейса приложения с вымышленными данными">
+                <rect width="1106" height="768" fill="#171824"/>
+                <rect width="205" height="768" fill="#20212e"/>
+                <rect x="22" y="24" width="30" height="30" rx="9" fill="#6859e8"/>
+                <rect x="62" y="30" width="106" height="8" rx="4" fill="#d9d8e8"/>
+                <rect x="22" y="100" width="110" height="7" rx="3" fill="#8b8da0"/>
+                <rect x="18" y="128" width="170" height="38" rx="9" fill="#37344f"/>
+                <circle cx="32" cy="147" r="4" fill="#a69aff"/>
+                <rect x="45" y="143" width="92" height="7" rx="3" fill="#c6c2ee"/>
+                <rect x="22" y="720" width="160" height="1" fill="#343542"/>
+                <rect x="22" y="738" width="62" height="6" rx="3" fill="#9b9cad"/>
+                <rect x="245" y="42" width="210" height="8" rx="4" fill="#a0a1b2"/>
+                <rect x="245" y="72" width="290" height="28" rx="6" fill="#f1f0f8"/>
+                <rect x="850" y="45" width="144" height="30" rx="15" fill="#254238"/>
+                <circle cx="870" cy="60" r="5" fill="#56c79b"/>
+                <rect x="883" y="57" width="96" height="6" rx="3" fill="#a8d7c4"/>
+                <rect x="245" y="132" width="820" height="588" rx="18" fill="#1e1f2c" stroke="#333443"/>
+                <rect x="276" y="166" width="180" height="10" rx="5" fill="#e1e0ec"/>
+                <rect x="276" y="190" width="240" height="7" rx="3" fill="#85879a"/>
+                <rect x="930" y="162" width="95" height="34" rx="10" fill="#302d48"/>
+                <rect x="286" y="228" width="740" height="180" rx="14" fill="#302d48"/>
+                <rect x="310" y="252" width="210" height="104" rx="8" fill="#48475a"/>
+                <circle cx="380" cy="302" r="33" fill="#69667f"/>
+                <path d="M338 340l37-42 30 31 25-27 53 54H338z" fill="#8b88a0"/>
+                <rect x="545" y="256" width="250" height="9" rx="4" fill="#e1e0ec"/>
+                <rect x="545" y="280" width="170" height="7" rx="3" fill="#9698aa"/>
+                <rect x="545" y="314" width="80" height="9" rx="4" fill="#8a7cf0"/>
+                <rect x="545" y="350" width="128" height="22" rx="11" fill="#244638"/>
+                <rect x="566" y="358" width="82" height="6" rx="3" fill="#83d1ae"/>
+                <rect x="286" y="430" width="740" height="180" rx="14" fill="#29273e"/>
+                <rect x="310" y="454" width="210" height="104" rx="8" fill="#48475a"/>
+                <rect x="338" y="477" width="55" height="56" rx="8" fill="#77748c"/>
+                <rect x="404" y="477" width="88" height="56" rx="8" fill="#5c5a70"/>
+                <rect x="545" y="458" width="250" height="9" rx="4" fill="#e1e0ec"/>
+                <rect x="545" y="482" width="170" height="7" rx="3" fill="#9698aa"/>
+                <rect x="545" y="516" width="80" height="9" rx="4" fill="#8a7cf0"/>
+                <rect x="545" y="552" width="128" height="22" rx="11" fill="#244638"/>
+                <rect x="566" y="560" width="82" height="6" rx="3" fill="#83d1ae"/>
+                <circle cx="270" cy="686" r="4" fill="#56c79b"/>
+                <rect x="284" y="683" width="180" height="6" rx="3" fill="#8b8da0"/>
+              </svg>
+            </div>
+            <div class="laptop-base" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="steps section-wrap">
+        <div class="section-heading">
+          <div class="eyebrow">ПРОСТО НАЧАТЬ</div>
+          <h2>От поиска до уведомления — несколько минут</h2>
+        </div>
+        <div class="step-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon icon-link" aria-hidden="true">↗</div>
+            <h3>Создайте аккаунт</h3>
+            <p>Зарегистрируйтесь на сайте, чтобы оформить подписку и управлять доступом.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon icon-bolt" aria-hidden="true">ϟ</div>
+            <h3>Оформите подписку</h3>
+            <p>Выберите месяц или год и оплатите доступ безопасно через платёжную страницу провайдера.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon icon-bell" aria-hidden="true">◔</div>
+            <h3>Скачайте приложение</h3>
+            <p>Установите Autoparcer, добавьте ссылку на поиск и включите мониторинг.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing section-wrap">
+        <div class="pricing-card">
+          <div class="pricing-copy">
+            <div class="eyebrow">ДОСТУП К AUTOPARCER</div>
+            <h2>Одна подписка.<br><span>Больше не нужно обновлять вручную.</span></h2>
+            <p>Для одной ссылки на поиск Avito. Новые объявления появляются в приложении по мере проверки.</p>
+            <div class="price"><strong id="price-amount">990 ₽</strong><span>/ 30 дней</span></div>
+            <button id="pricing-buy" class="button button-primary" type="button">Оформить подписку <span aria-hidden="true">↗</span></button>
+            <p class="price-note">Есть годовой доступ на 12 месяцев со скидкой 30%. Оплата разовая, без автопродления.</p>
+          </div>
+          <div class="pricing-benefits">
+            <div class="benefit-title">В подписку входит</div>
+            <ul>
+              <li><span>✓</span> Мониторинг одной страницы поиска</li>
+              <li><span>✓</span> Лента новых объявлений в приложении</li>
+              <li><span>✓</span> Уведомления о новых находках</li>
+              <li><span>✓</span> Личный кабинет для управления подпиской</li>
+            </ul>
+            <div class="secure-note"><span aria-hidden="true">▣</span> Оплата проходит на защищённой странице платёжного сервиса</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice-section section-wrap">
+        <div id="site-notice" class="site-notice" role="status" aria-live="polite" hidden></div>
+        <p class="disclaimer">Autoparcer — независимый инструмент для мониторинга объявлений. Сервис не связан с Avito. Наличие установленного приложения и подключение к интернету необходимы для мониторинга.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="brand footer-brand" href="/">
+        <span class="brand-mark" aria-hidden="true">a</span>
+        <span>auto<span class="brand-accent">parcer</span></span>
+      </a>
+      <span>Автоматический мониторинг объявлений</span>
+      <nav class="footer-links" aria-label="Правовая информация">
+        <a href="/privacy.html">Политика конфиденциальности</a>
+        <a href="/terms.html">Условия использования</a>
+      </nav>
+      <span>© Autoparcer</span>
+    </footer>
+
+    <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title">
+      <div class="auth-card">
+        <button id="auth-close" class="dialog-close" type="button" aria-label="Закрыть">×</button>
+        <a class="brand auth-brand" href="/" aria-label="Autoparcer">
+          <span class="brand-mark" aria-hidden="true">a</span>
+          <span>auto<span class="brand-accent">parcer</span></span>
+        </a>
+        <h2 id="auth-title">Создайте аккаунт</h2>
+        <p id="auth-description" class="auth-description">Создайте аккаунт для управления подпиской.</p>
+        <form id="auth-form" class="ym-hide-content">
+          <label for="auth-username">Логин</label>
+          <input id="auth-username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Например, max1988" minlength="3" maxlength="32" pattern="[A-Za-zА-Яа-яЁё0-9][A-Za-zА-Яа-яЁё0-9._-]{2,31}" title="От 3 до 32 букв, цифр, точек, дефисов или подчёркиваний" required>
+          <label for="auth-password">Пароль</label>
+          <input id="auth-password" name="password" type="password" autocomplete="new-password" placeholder="Не менее 10 символов" minlength="10" maxlength="128" required>
+          <div id="registration-consents" class="form-consents">
+            <label class="check-row">
+              <input name="acceptedTerms" type="checkbox" required>
+              <span>Принимаю <a href="/terms.html" target="_blank" rel="noopener">Условия использования</a>.</span>
+            </label>
+            <label class="check-row">
+              <input name="personalDataConsent" type="checkbox" required>
+              <span>Даю согласие на обработку персональных данных по <a href="/privacy.html" target="_blank" rel="noopener">Политике конфиденциальности</a>.</span>
+            </label>
+          </div>
+          <p id="auth-error" class="form-error" role="alert" hidden></p>
+          <button id="auth-submit" class="button button-primary auth-submit" type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="auth-switch-copy"><span id="auth-switch-prompt">Уже есть аккаунт?</span> <button id="auth-switch" type="button">Войти</button></p>
+        <p class="auth-privacy">Согласия фиксируются отдельно от регистрации с датой и версией документов.</p>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self'; script-src 'self';">
+    <title>Autoparcer.ru</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="window-chrome" aria-label="Управление окном">
+      <div class="window-controls">
+        <button id="window-minimize" class="window-control" type="button" aria-label="Свернуть" title="Свернуть">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6h9"/></svg>
+        </button>
+        <button id="window-maximize" class="window-control" type="button" aria-label="Развернуть" title="Развернуть">
+          <svg class="window-maximize-icon" viewBox="0 0 12 12" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="9" height="9"/>
+          </svg>
+          <svg class="window-restore-icon" viewBox="0 0 12 12" aria-hidden="true">
+            <path d="M4 1.5h6.5V8M8 4H1.5v6.5H8z"/>
+          </svg>
+        </button>
+        <button id="window-close" class="window-control window-close" type="button" aria-label="Закрыть" title="Закрыть">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2.5 2.5 7 7m0-7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="window-resize-handles" aria-hidden="true">
+      <div class="window-resize-handle resize-n" data-edge="n"></div>
+      <div class="window-resize-handle resize-s" data-edge="s"></div>
+      <div class="window-resize-handle resize-e" data-edge="e"></div>
+      <div class="window-resize-handle resize-w" data-edge="w"></div>
+      <div class="window-resize-handle resize-ne" data-edge="ne"></div>
+      <div class="window-resize-handle resize-nw" data-edge="nw"></div>
+      <div class="window-resize-handle resize-se" data-edge="se"></div>
+      <div class="window-resize-handle resize-sw" data-edge="sw"></div>
+    </div>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">A</span><span>auto<span class="brand-accent">parcer.ru</span></span></div>
+        <div class="sidebar-label">СТРАНИЦЫ AVITO</div>
+        <nav id="page-nav" class="page-nav" aria-label="Страницы мониторинга"></nav>
+        <button id="add-page-button" class="add-page-button" type="button">＋ Добавить страницу</button>
+        <section class="account-panel" aria-label="Профиль Autoparcer">
+          <div id="account-name" class="account-name">Проверяем профиль…</div>
+          <div id="subscription-status" class="subscription-status">Связываемся с сервером</div>
+          <p id="account-error" class="account-error" role="status" hidden></p>
+          <div class="account-actions">
+            <button id="account-login-button" class="account-action-button" type="button" hidden>Войти</button>
+            <button id="account-refresh-button" class="account-action-button" type="button" hidden>Проверить подписку</button>
+            <button id="account-subscribe-button" class="account-action-button" type="button" hidden>Оформить / продлить</button>
+            <button id="account-logout-button" class="account-action-button" type="button" hidden>Выйти</button>
+          </div>
+        </section>
+        <div class="sidebar-bottom">
+          <div class="connection-dot"></div>
+          <span>Локальное приложение</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+            <h1 id="page-heading">Страница мониторинга</h1>
+          </div>
+          <div class="topbar-actions">
+            <div class="live-chip"><span class="live-dot"></span><span id="monitor-label">Не запущен</span></div>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Включить тёмную тему" title="Включить тёмную тему">
+              <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z"/>
+              </svg>
+              <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+              </svg>
+            </button>
+            <button id="settings-button" class="settings-button" type="button" aria-label="Настройки страницы" title="Настройки страницы">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.827 2.37 2.37a1.724 1.724 0 0 0 1.065 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.827 3.31-2.37 2.37a1.724 1.724 0 0 0-2.573 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.827-2.37-2.37a1.724 1.724 0 0 0-1.065-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.827-3.31 2.37-2.37.996.607 2.296.07 2.573-1.065Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <dialog id="settings-dialog" class="settings-dialog" aria-labelledby="settings-heading">
+          <section class="setup-card">
+            <div class="settings-heading-row">
+              <div class="section-heading">
+                <div class="section-icon">↗</div>
+                <div>
+                  <h2 id="settings-heading">Настройки страницы</h2>
+                  <p>Настройки сохраняются на этом компьютере</p>
+                </div>
+              </div>
+              <button id="close-settings-button" class="close-settings-button" type="button" aria-label="Закрыть настройки">×</button>
+            </div>
+            <form id="monitor-form">
+              <label for="page-name">Название страницы</label>
+              <input id="page-name" type="text" maxlength="60" placeholder="Например, Игры для приставок" required>
+              <label for="search-url">Ссылка на поиск Avito</label>
+              <div class="input-wrap">
+                <span class="input-icon">⌕</span>
+                <input id="search-url" type="url" placeholder="https://www.avito.ru/..." autocomplete="url" required>
+              </div>
+              <div class="form-row">
+                <div class="field-grow">
+                  <span class="field-hint">Одновременно можно запустить только одну страницу. Окно Avito скрыто и откроется, если потребуется пройти CAPTCHA.</span>
+                </div>
+                <div class="interval-field">
+                  <label for="interval">Проверять каждые</label>
+                  <div class="interval-input"><input id="interval" type="number" min="5" max="3600" step="1" value="60"><span>сек</span></div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button id="save-button" class="secondary-button" type="button">Сохранить</button>
+                <button id="delete-page-button" class="danger-button" type="button">Удалить страницу</button>
+                <span class="credit-note"><span>ⓘ</span> Проверки идут напрямую к Avito</span>
+              </div>
+            </form>
+          </section>
+        </dialog>
+
+        <dialog id="delete-confirm-dialog" class="confirm-dialog" aria-labelledby="delete-confirm-heading">
+          <section class="confirm-card">
+            <div class="confirm-icon" aria-hidden="true">!</div>
+            <h2 id="delete-confirm-heading">Удалить страницу?</h2>
+            <p id="delete-confirm-message"></p>
+            <div class="confirm-actions">
+              <button id="cancel-delete-button" class="secondary-button" type="button">Отмена</button>
+              <button id="confirm-delete-button" class="danger-button" type="button">Удалить страницу</button>
+            </div>
+          </section>
+        </dialog>
+
+        <dialog id="account-dialog" class="settings-dialog account-dialog" aria-labelledby="account-dialog-heading">
+          <section class="setup-card">
+            <div class="section-heading">
+              <div class="section-icon">A</div>
+              <div>
+                <h2 id="account-dialog-heading">Войти в Autoparcer</h2>
+                <p>Используйте логин и пароль от autoparcer.ru</p>
+              </div>
+            </div>
+            <form id="account-login-form">
+              <label for="account-username">Логин</label>
+              <input id="account-username" name="username" type="text" autocomplete="username" maxlength="254" required>
+              <label for="account-password">Пароль</label>
+              <input id="account-password" name="password" type="password" autocomplete="current-password" maxlength="128" required>
+              <p id="account-login-error" class="account-login-error" role="alert" hidden></p>
+              <div class="account-dialog-actions">
+                <button id="account-login-submit" class="primary-button" type="submit">Войти</button>
+                <button id="account-dialog-close" class="secondary-button" type="button">Закрыть</button>
+              </div>
+            </form>
+            <button id="account-open-profile" class="account-profile-link" type="button">Создать аккаунт или изменить пароль на сайте</button>
+          </section>
+        </dialog>
+
+        <section class="feed-card">
+          <div class="feed-header">
+            <div class="feed-header-info">
+              <h2>Объявления</h2>
+              <p id="feed-description">Новые объявления появляются внизу ленты</p>
+              <p id="last-check" class="last-check">Успешной проверки ещё не было</p>
+            </div>
+            <div class="monitor-toolbar" role="group" aria-label="Управление мониторингом">
+              <button id="start-button" class="primary-button" type="submit" form="monitor-form" formnovalidate><span>▶</span> Запустить</button>
+              <button id="stop-button" class="secondary-button" type="button" disabled hidden>Остановить</button>
+              <button id="resume-button" class="secondary-button" type="button" hidden>Продолжить</button>
+            </div>
+            <div class="count-pill"><span id="listing-count">0</span> новых</div>
+          </div>
+          <div id="feed" class="feed">
+            <div id="empty-state" class="empty-state">
+              <div class="empty-illustration"><span>⌕</span><i></i><b></b></div>
+              <h3>Объявлений пока нет</h3>
+              <p>Запустите мониторинг — покажу найденные объявления<br>и сообщу, когда появятся новые.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="activity">
+          <span class="activity-indicator"></span>
+          <span id="status-message">Готов к работе</span>
+          <span id="status-time" class="activity-time"></span>
+        </footer>
+      </main>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

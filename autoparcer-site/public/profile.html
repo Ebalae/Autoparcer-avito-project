@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7fb">
+    <meta name="description" content="Личный кабинет Autoparcer: подписка и приложение.">
+    <title>Личный кабинет — Autoparcer</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/site.css">
+    <script src="/profile.js" defer></script>
+  </head>
+  <body class="profile-page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Autoparcer — главная">
+        <span class="brand-mark" aria-hidden="true">a</span>
+        <span>auto<span class="brand-accent">parcer</span></span>
+      </a>
+      <div class="profile-header-actions">
+        <span id="profile-username" class="profile-username"></span>
+        <button id="profile-logout" class="button button-quiet" type="button" hidden>Выйти</button>
+      </div>
+    </header>
+
+    <main class="profile-main section-wrap">
+      <div id="profile-loading" class="profile-loading">Загружаем личный кабинет…</div>
+      <div id="profile-content" hidden>
+        <div class="profile-title">
+          <div class="eyebrow">АККАУНТ AUTOPARCER</div>
+          <h1>Личный кабинет</h1>
+          <p>Управляйте доступом к приложению и выберите подходящий период подписки.</p>
+        </div>
+
+        <section class="profile-overview">
+          <div class="profile-overview-copy">
+            <span class="profile-label">СТАТУС ПОДПИСКИ</span>
+            <strong id="profile-subscription-status" class="profile-status"></strong>
+            <span id="profile-subscription-plan" class="profile-plan-label"></span>
+          </div>
+          <div class="profile-overview-actions">
+            <a id="profile-download" class="button button-outline" href="/download" hidden>Скачать для Windows</a>
+            <span id="profile-download-note" class="profile-download-note">Ссылка на приложение появится после его публикации.</span>
+          </div>
+        </section>
+
+        <section class="profile-security">
+          <div class="eyebrow">БЕЗОПАСНОСТЬ АККАУНТА</div>
+          <h2>Сменить пароль</h2>
+          <p>Подтвердите текущий пароль и задайте новый. В других активных сеансах потребуется войти снова.</p>
+          <form id="password-change-form" class="ym-hide-content">
+            <label for="current-password">
+              Текущий пароль
+              <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" maxlength="128" required>
+            </label>
+            <label for="new-password">
+              Новый пароль
+              <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="10" maxlength="128" required>
+            </label>
+            <label for="confirm-password">
+              Повторите новый пароль
+              <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="10" maxlength="128" required>
+            </label>
+            <p id="password-change-error" class="form-error" role="alert" hidden></p>
+            <div class="password-change-action">
+              <button class="button button-outline" type="submit">Изменить пароль</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="profile-plans">
+          <div class="profile-section-heading">
+            <div>
+              <div class="eyebrow">ВЫБЕРИТЕ ПЕРИОД</div>
+              <h2>Подписка Autoparcer</h2>
+            </div>
+            <span class="one-time-label">Разовая оплата · без автопродления</span>
+          </div>
+
+          <label class="receipt-email-field ym-hide-content" for="receipt-email">
+            Email для фискального чека
+            <input id="receipt-email" name="receiptEmail" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+            <span>ЮKassa отправит чек на эту почту. Сайт не сохраняет указанный адрес.</span>
+          </label>
+
+          <div class="plan-grid">
+            <article class="plan-card">
+              <div class="plan-heading">
+                <div><span class="plan-overline">ГИБКО</span><h3>1 месяц</h3></div>
+              </div>
+              <div class="plan-price"><strong id="monthly-price">990 ₽</strong><span>/ 30 дней</span></div>
+              <p class="plan-description">Доступ на 30 дней. Продление — только по вашему решению.</p>
+              <button id="monthly-checkout" class="button button-outline plan-button" type="button">Выбрать на месяц</button>
+            </article>
+
+            <article class="plan-card plan-card-featured">
+              <span class="plan-discount" id="annual-discount">−30%</span>
+              <div class="plan-heading">
+                <div><span class="plan-overline">ВЫГОДНЕЕ</span><h3>12 месяцев</h3></div>
+              </div>
+              <div class="plan-price">
+                <strong id="annual-price">8 316 ₽</strong>
+                <span id="annual-old-price" class="plan-old-price">11 880 ₽</span>
+              </div>
+              <p class="plan-description"><span id="annual-monthly-price">693 ₽</span> в месяц при оплате за год. Экономия <span id="annual-savings">3 564 ₽</span>.</p>
+              <button id="annual-checkout" class="button button-primary plan-button" type="button">Выбрать на 12 месяцев</button>
+            </article>
+          </div>
+          <p class="plan-footnote">Годовой период составляет 12 календарных месяцев. Оплата производится один раз; следующее списание без вашего действия не выполняется.</p>
+        </section>
+
+        <div id="profile-notice" class="site-notice" role="status" aria-live="polite" hidden></div>
+        <p class="profile-local-note">Мониторинг выполняется на вашем компьютере. Чтобы объявления проверялись, компьютер и приложение должны быть включены.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="brand footer-brand" href="/">
+        <span class="brand-mark" aria-hidden="true">a</span>
+        <span>auto<span class="brand-accent">parcer</span></span>
+      </a>
+      <nav class="footer-links" aria-label="Правовая информация">
+        <a href="/privacy.html">Политика конфиденциальности</a>
+        <a href="/terms.html">Условия использования</a>
+      </nav>
+      <span>© Autoparcer</span>
+    </footer>
+  </body>
+</html>
