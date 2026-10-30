@@ -23,6 +23,8 @@
 
 AutoParcer — сервис мониторинга объявлений Avito. Добавьте ссылку на поиск, запустите мониторинг и проверяйте новые объявления в ленте приложения для Windows.
 
+> **Статус проекта:** эта версия была создана примерно за два дня и остаётся очень сырым прототипом. Репозиторий опубликован прежде всего для ознакомления и дальнейшей доработки; это не готовый продукт. Перед реальным использованием внимательно проверьте код, настройте безопасность и инфраструктуру, проведите тестирование и внесите необходимые изменения. Не запускайте проект в production без отдельной проверки.
+
 > **Важно:** мониторинг работает на компьютере пользователя. Для проверки объявлений компьютер и приложение должны быть включены. AutoParcer — независимый проект, не связанный с Avito. Используйте сервис в соответствии с применимыми правилами и условиями площадки.
 
 ### Возможности
@@ -113,6 +115,8 @@ node --test
 ## English
 
 AutoParcer is an Avito listing monitoring service. Add a search URL, start monitoring, and follow new listings in the Windows app feed.
+
+> **Project status:** this version was built in about two days and remains a very rough prototype. This repository is shared primarily for review and further development; it is not a finished product. Before real-world use, carefully review the code, secure the configuration and infrastructure, test it, and make any necessary changes. Do not deploy it to production without an independent review.
 
 > **Note:** monitoring runs on the user's computer. The computer and app must be running to check for listings. AutoParcer is an independent project and is not affiliated with Avito. Use the service in accordance with applicable rules and platform terms.
 
